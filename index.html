@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Ink — a free Claude skill for slides with taste</title>
+<meta name="description" content="Neon Ink is a free, open-source Claude skill: white canvas, black hand-drawn line art, one neon accent per slide.">
+<!-- SETUP: for link previews, set og:image to the absolute URL of img/palette.png once this is hosted. -->
+<meta property="og:title" content="Neon Ink — a free Claude skill">
+<meta property="og:description" content="Ink lines. Neon accents. Oceans of white.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;700;800&display=swap">
+<style>
+:root{--ink:#000;--paper:#fff;--violet:#9747ff;--r:16px;--font:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--font);font-size:20px;line-height:1.7}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+header{display:flex;justify-content:space-between;align-items:center;padding:28px 0}
+.mark{font-weight:800;font-size:22px;letter-spacing:-.01em;text-decoration:none}
+nav a{font-size:18px;margin-left:24px}
+.hero{padding:72px 0 48px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.label{font-size:16px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(40px,6vw,72px);line-height:1.04;letter-spacing:-.03em;font-weight:800;margin:20px 0 28px}
+.lede{font-size:24px;max-width:34ch}
+.btn{display:inline-block;margin-top:36px;padding:18px 32px;background:var(--violet);color:#fff;font:700 22px/1 var(--font);
+  border:2px solid #000;border-radius:var(--r);box-shadow:6px 6px 0 #000;text-decoration:none;cursor:pointer;transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 #000}
+.meta{margin-top:22px;font-size:17px}
+.art{justify-self:center;width:min(100%,340px)}
+section{padding:72px 0}
+h2{font-size:clamp(32px,4.5vw,48px);line-height:1.1;letter-spacing:-.02em;font-weight:800;margin-bottom:36px}
+.shots{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.shots img{width:100%;height:auto;display:block;border:2px solid #000;border-radius:var(--r)}
+.shots .wide{grid-column:1/-1}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{border:2px solid #000;border-radius:var(--r);padding:32px}
+.card b{display:block;font-size:24px;margin-bottom:8px}
+.how{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.how .card{min-width:0}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:17px;border:2px solid #000;border-radius:12px;padding:12px 14px;display:block;margin:12px 0;white-space:pre-wrap;word-break:break-all}
+.signup{border:2px solid #000;border-radius:var(--r);padding:44px;box-shadow:8px 8px 0 #000}
+.signup p{max-width:52ch}
+form{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+input[type=email]{flex:1 1 280px;font:400 20px var(--font);padding:16px 18px;border:2px solid #000;border-radius:12px}
+form .btn{margin:0}
+.fine{font-size:16px;margin-top:14px}
+footer{padding:48px 0 72px;font-size:17px;border-top:2px solid #000;margin-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:760px){.hero,.shots,.rules,.how{grid-template-columns:1fr}.hero{padding-top:36px}.art{order:-1;width:200px;justify-self:start}.signup{padding:28px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="mark" href="#top">Neon Ink</a>
+    <nav><a href="#rules">Rules</a><a href="#install">Install</a><a href="https://github.com/thevibegarage/neon-ink">GitHub</a></nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <div class="label">A free Claude skill</div>
+        <h1>Ink lines.<br>Neon accents.<br>Oceans of white.</h1>
+        <p class="lede">Neon Ink teaches Claude to design slides with taste. White canvas. Black hand-drawn line art. One neon accent per slide.</p>
+        <a class="btn" href="https://github.com/thevibegarage/neon-ink">Get it on GitHub →</a>
+        <p class="meta">Free. MIT licensed. No sign-up needed.</p>
+      </div>
+      <img class="art" src="img/idea-bulb.svg" alt="A lightbulb with a missing amber jigsaw piece slotted into it">
+    </div>
+
+    <section aria-labelledby="see">
+      <h2 id="see">See the style.</h2>
+      <div class="shots">
+        <img class="wide" src="img/palette.png" alt="The Neon Ink palette: black, violet, magenta, amber, ultramarine and highlighter yellow, with hand-drawn doodles">
+        <img src="img/statement-split.png" alt="A slide with the headline 'That's where I come in' beside a line-art lightbulb">
+        <img src="img/process.png" alt="A process slide: outlined boxes joined by violet arrows">
+        <img src="img/case-study.png" alt="A case-study slide with three staggered outlined cards">
+        <img src="img/results.png" alt="A results slide with four large magenta metrics">
+      </div>
+    </section>
+
+    <section id="rules" aria-labelledby="r">
+      <h2 id="r">Three rules. That's the style.</h2>
+      <div class="rules">
+        <div class="card"><b>White canvas.</b>Two-thirds of every slide stays empty.</div>
+        <div class="card"><b>Black ink.</b>2px line art, outlined cards, no fills.</div>
+        <div class="card"><b>One neon hit.</b>Exactly one accent per slide, chosen by meaning.</div>
+      </div>
+    </section>
+
+    <section id="install" aria-labelledby="i">
+      <h2 id="i">Add it to Claude.</h2>
+      <div class="how">
+        <div class="card"><b>Claude Code</b>Clone the repo into your skills folder:
+          <code>git clone https://github.com/thevibegarage/neon-ink ~/.claude/skills/neon-ink</code>Then ask for a deck in Neon Ink.</div>
+        <div class="card"><b>Claude.ai</b>Zip the <code style="display:inline;padding:2px 8px;word-break:normal">neon-ink</code> folder and upload it under Settings → Skills. Requires a plan with skills enabled.</div>
+      </div>
+    </section>
+
+    <!-- SETUP: put your email provider's form URL in the form's action (Mailchimp, Kit, Beehiiv, HubSpot…).
+         While action still says FORM_ACTION_URL this whole section hides itself, so a half-wired form never shows. -->
+    <section id="signup-section" aria-labelledby="s">
+      <div class="signup">
+        <h2 id="s" style="margin-bottom:16px">Want new templates?</h2>
+        <p>I'll email you when I add them. Totally optional. The skill is free and stays free either way.</p>
+        <form id="signup" action="FORM_ACTION_URL" method="post">
+          <label for="email" style="position:absolute;left:-9999px">Email address</label>
+          <input id="email" name="email" type="email" required placeholder="you@company.com" autocomplete="email">
+          <button class="btn" type="submit">Keep me posted</button>
+        </form>
+        <p class="fine">Only new templates. Unsubscribe any time.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Made by Garage Labs Technologies</span>
+    <span><a href="https://github.com/thevibegarage/neon-ink">GitHub</a> · MIT License</span>
+  </footer>
+</div>
+<script>
+  var f=document.getElementById('signup');
+  if(f.getAttribute('action').indexOf('FORM_ACTION_URL')!==-1){document.getElementById('signup-section').hidden=true}
+</script>
+</body>
+</html>
